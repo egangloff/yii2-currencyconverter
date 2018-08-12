@@ -87,6 +87,25 @@ use egangloff\currencyconverter\components\CurrencyConverter;
 
 ### Currrency Selector Widget
 
+Copy and change CSS in frontend/web/css/site.css
+
+```
+/* Currency Selector Widget */
+
+.currency{
+    text-align: center;
+}
+
+#currency-selector{
+    margin: 15px;
+    background-color: #337AB7;
+    color: #fff;
+    border: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+```
+
 in your view
 
 ```
