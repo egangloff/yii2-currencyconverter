@@ -17,7 +17,7 @@ class DefaultController extends Controller
      */
     public function actionSetcurrency()
     {
-        Yii::$app->session['currency'] = Yii::$app->request->post('curr');
+        Yii::$app->session['currency'] = Yii::$app->request->get('curr');
         return $this->redirect(Yii::$app->request->referrer);
     }
 }

@@ -1,7 +1,7 @@
 <?php
     use yii\helpers\Html;
 ?>
-<form id="currency-form" name="currency-form" method="post" action="<?=Yii::$app->request->hostInfo?>/currencyconverter/default/setcurrency">
+<form id="currency-form" name="currency-form" method="get" action="<?=Yii::$app->request->hostInfo?>/currencyconverter/default/setcurrency">
     <?= Html::csrfMetaTags() ?>
     <select id="currency-selector" name="curr" onchange="document.getElementById('currency-form').submit()">
         <?php
