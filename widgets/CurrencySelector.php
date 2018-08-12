@@ -7,7 +7,6 @@ use yii\helpers\Html;
 
 class CurrencySelector extends Widget
 {
-    public $message;
 
     public function init()
     {
