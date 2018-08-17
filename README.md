@@ -61,7 +61,7 @@ Config *frontend* modules and components in `frontend/config/main.php`
 ],
 'components' => [
     'currencyconverter' => [
-        'class' =>  'common/modules/currencyconverter/components/CurrencyConverter',
+        'class' =>  'egangloff/currencyconverter/components/CurrencyConverter',
     ]
 ],
 ```
@@ -106,6 +106,7 @@ Copy and change CSS in frontend/web/css/site.css
 }
 ```
 
+
 in your view
 
 ```
@@ -114,3 +115,24 @@ use egangloff\currencyconverter\widgets\CurrencySelector;
 <?=CurrencySelector::widget()?>
 
 ```
+
+## Update Currencies
+
+In console
+
+```
+yii currencyconverter/console/update
+```
+
+You can also create a Cron Job for automatic update
+
+```
+crontab -e
+```
+
+```
+0 0 * * * /usr/local/bin/php ~/webapps/toucanproperty/yii currencyconverter/console/update
+```
+Save and exit, it will automatically update currencies every days at midnight
+
+You can adjust schedule using [crontab.guru](https://crontab.guru/)
