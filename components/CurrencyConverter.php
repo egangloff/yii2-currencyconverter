@@ -37,4 +37,30 @@ class CurrencyConverter extends Component
             return $symbol . ' ' .Yii::$app->Formatter->format($amount, 'integer');
         }
     }
+    
+    public static function showAmount($amount) {
+        if(isset(Yii::$app->session['currency']) and Yii::$app->session['currency'] != Yii::$app->getModule('currencyconverter')->currency_source)
+        {
+            $model = Currency::find()
+                ->orderBy(['id' => SORT_DESC])
+                ->one();
+            $rates = unserialize($model->rates);
+            $eur = $amount / $rates[Yii::$app->formatter->currencyCode];
+            $target = $eur * $rates[Yii::$app->session['currency']];
+            return $target;
+        }
+        else{
+            return $amount;
+        }
+    }
+
+    public static function showCurrency() {
+        if(isset(Yii::$app->session['currency']) and Yii::$app->session['currency'] != Yii::$app->getModule('currencyconverter')->currency_source)
+        {
+            return Yii::$app->session['currency'];
+        }
+        else{
+            return Yii::$app->getModule('currencyconverter')->currency_source;
+        }
+    }
 }
