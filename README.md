@@ -48,7 +48,7 @@ Config *frontend* modules and components in `frontend/config/main.php`
 'modules' => [
     'currencyconverter' => [
         'class' => 'egangloff\currencyconverter\CurrencyConverter',
-        'access_key' => '65f8a33df94db762f137e4c7be2bb617',
+        'access_key' => 'FIXER.IO API KEY',
         'currencies' => [
 		'THB'=>'&#3647;', 
 		'USD'=>'&#036;', 
