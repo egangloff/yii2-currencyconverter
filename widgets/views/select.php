@@ -9,12 +9,9 @@
         foreach ($currencies as $key => $value)
         {
             ?>
-            <option value="<?=$key?>"><?=$key?></option>
+            <option <?php if($model == $key) echo 'selected'; ?> value="<?=$key?>"><?=$key?></option>
             <?php
         }
         ?>
     </select>
 </form>
-<script type="text/javascript">
-    document.getElementById('currency-selector').value = '<?=$model?>';
-</script>
